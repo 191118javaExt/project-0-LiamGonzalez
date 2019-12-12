@@ -1,5 +1,6 @@
 package com.revature.models;
 
+
 public class Administrator extends Person {
 	private String name;
 	private String userName;

@@ -7,6 +7,12 @@ public abstract class Person {
 	private int accountId;
 	//private int age;
 	
+	//public static accountRegistration() {
+	//	System.out.println("");
+	//}
+	
+	
+	
 	
 	public abstract void registerForAccount();
 	//****IDK YET IF I WANT TO CUSTOMIZE LOGIN FOR EACH TYPE OF USER****
@@ -20,7 +26,7 @@ public abstract class Person {
 		//for Employees, they will only be able to VIEW customer accounts
 		//Administrators will be allowed to VIEW and EDIT customer accounts
 		
-		
+	
 	}
 	
 	

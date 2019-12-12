@@ -60,6 +60,32 @@ public class Customer extends Person {
 	}
 	
 
+	//@Override
+	public static void registerForCustomerAccount() {
+		Scanner customerscan = new Scanner(System.in);
+		
+		System.out.println("Thank you for registering for an account.");
+		System.out.println("Please provide the following information.");
+		System.out.println("");
+		
+		System.out.println("Name: ");
+		String name = customerscan.nextLine();
+		
+		System.out.println("Password:");
+		String password = customerscan.nextLine();
+		
+		System.out.println("-----------------------------");
+		System.out.println("Name: " + name);
+		System.out.println("Password: " + password);
+		System.out.println("-----------------------------");
+		
+		
+		
+		
+		
+		
+	}
+
 	@Override
 	public void registerForAccount() {
 		// TODO Auto-generated method stub

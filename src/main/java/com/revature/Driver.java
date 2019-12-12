@@ -1,5 +1,6 @@
 package com.revature;
 import java.util.Scanner;
+import com.revature.models.*;
  
 
 public class Driver {
@@ -14,7 +15,7 @@ public class Driver {
 		//This will be the first screen that pops up and lets the user choose an option
 		//Depending on which option is chosen, we will follow the response according to what
 		//action the user wants to take. (if a customer wants to login, we'll follow up with 
-		//asking for username and password)
+		//asking for user name and password)
 		
 	
 		Scanner sc = new Scanner(System.in);
@@ -37,6 +38,7 @@ public class Driver {
 		case "R":
 			//take user to registration (registration will give option
 			//to register as customer, employee or administrator)
+			Customer.registerForCustomerAccount();
 			break;
 		case "E":
 			//take user to employee login screen
