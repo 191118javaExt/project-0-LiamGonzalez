@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.util.Scanner;
 
 public class Administrator extends Person {
 	private String name;
@@ -54,6 +55,16 @@ public class Administrator extends Person {
 
 	public void setAccountId(int accountId) {
 		this.accountId = accountId;
+	}
+	
+	public static void administratorRegistration() {
+		Scanner adminscan = new Scanner(System.in);
+		
+		System.out.println("Welcome to Administration Registration");
+		System.out.println("Please fill out the following to create your account:");
+		/*
+		 * Left off here*********************************************************************************8
+		 */
 	}
 
 

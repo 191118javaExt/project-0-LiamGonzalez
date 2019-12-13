@@ -2,6 +2,8 @@ package com.revature.models;
 
 import java.util.Scanner;
 
+import com.revature.Driver;
+
 
 public class Customer extends Person {
 	private String first_name;
@@ -69,7 +71,8 @@ public class Customer extends Person {
 		this.accountBalance = accountBalance;
 	}
 	
-
+// This is the method that is called when "R" is chosen on the console
+//the customer will fill out their application for a bank account
 	//@Override
 	public static void registerForCustomerAccount() {
 		Scanner customerscan = new Scanner(System.in);
@@ -78,16 +81,23 @@ public class Customer extends Person {
 		System.out.println("Please provide the following information.");
 		System.out.println("");
 		
-		System.out.println("Name: ");
-		String name = customerscan.nextLine();
+		System.out.println("First Name: ");
+		String first_name = customerscan.nextLine();
+		
+		System.out.println("Last Name: ");
+		String last_name = customerscan.nextLine();
 		
 		System.out.println("Password:");
 		String password = customerscan.nextLine();
 		
 		System.out.println("-----------------------------");
-		System.out.println("Name: " + name);
+		System.out.println("Name: " + first_name + " " + last_name);
 		System.out.println("Password: " + password);
+		
+		System.out.println("Thank you for applying for an account.");
+		System.out.println("Your application will be reviewed by an employee soon. ");
 		System.out.println("-----------------------------");
+		Driver.startingScreen();
 		
 		
 		
