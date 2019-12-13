@@ -4,27 +4,37 @@ import java.util.Scanner;
 
 
 public class Customer extends Person {
-	private String name;
-	private String userName;
+	private String first_name;
+	private String last_name;
+	private String userName = first_name + last_name;
 	private String password;
 	private int accountId;
 	private double accountBalance;
 	
 	public Customer(String name, String userName, String password, int accountId) {
 		super();
-		this.name = name;
+		this.first_name = first_name;
+		this.last_name = last_name;
 		this.userName = userName;
 		this.password = password;
 		this.accountId = accountId;
 		this.accountBalance = accountBalance;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return first_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String first_name) {
+		this.first_name = first_name;
+	}
+	
+	public String getLastName() {
+		return last_name;
+	}
+	
+	public void setLastName(String last_name) {
+		this.last_name = last_name;
 	}
 
 	public String getUserName() {

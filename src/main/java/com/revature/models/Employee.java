@@ -17,6 +17,13 @@ public class Employee extends Person {
 	
 	
 	
+	public Employee(int id, String first_name, String last_name, String email, double salary, Object object) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 	public String getName() {
 		return name;
 	}
@@ -72,7 +79,8 @@ public class Employee extends Person {
 
 
 
-
+//might not need to put this in an abstract class
+//just put the login methods for 
 	@Override
 	public void registerForAccount() {
 		// TODO Auto-generated method stub
