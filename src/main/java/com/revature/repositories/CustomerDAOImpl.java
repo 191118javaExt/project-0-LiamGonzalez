@@ -1,3 +1,13 @@
+/*
+ * 
+ * Go through entire class to ensure everything is accurate
+ * 
+ * 
+ */
+
+
+
+
 package com.revature.repositories;
 
 import java.sql.Connection;
@@ -10,6 +20,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.revature.models.Customer;
 import com.revature.models.Employee;
 import com.revature.util.ConnectionUtil;
 
@@ -20,13 +31,13 @@ public class CustomerDAOImpl implements EmployeeDAO {
 	@Override
 	public List<Employee> findAll() {
 		
-		List<Employee> list = new ArrayList<>();
-		List<Integer> supervisors = new ArrayList<>();
+		List<Customer> list = new ArrayList<>();
+		List<Customer> supervisors = new ArrayList<>();
 		
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			
 			// This String represents the SQL which we will execute on our database
-			String sql = "SELECT * FROM employee;";
+			String sql = "SELECT * FROM user;";
 			
 			// This Statement object is a wrapper around our SQL string
 			// And is obtained through our connection to the database
@@ -39,13 +50,13 @@ public class CustomerDAOImpl implements EmployeeDAO {
 			// This is a small difference, the only thing is that it simplifies
 			// our syntax. Since we can use a while loop instead of a do-while loop
 			while(rs.next()) {
-				int id = rs.getInt("emp_id");
-				String first_name = rs.getString("first_name");
-				String last_name = rs.getString("last_name");
-				String email = rs.getString("email");
-				double salary = rs.getDouble("salary");
+				int id = rs.getInt("user_id");
+				String first_name = rs.getString("first_name");///////////
+				String last_name = rs.getString("last_name");//////////
+				String user_password = rs.getString("");///////
+				//boolean is_e = rs.getDouble("salary");/////////
 				
-				Employee e = new Employee(id, first_name, last_name, email, salary, null);
+				Employee e = new Employee(id, first_name, last_name, null);//////////
 				int sup_id = rs.getInt("supervisor");
 				
 				list.add(e);

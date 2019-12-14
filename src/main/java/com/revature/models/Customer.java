@@ -8,19 +8,19 @@ import com.revature.Driver;
 public class Customer extends Person {
 	private String first_name;
 	private String last_name;
-	private String userName = first_name + last_name;
-	private String password;
+	//private String userName = first_name + last_name;
+	private String user_password;
 	private int accountId;
-	private double accountBalance;
+	private double balance;
 	
 	public Customer(String name, String userName, String password, int accountId) {
 		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
-		this.userName = userName;
-		this.password = password;
+		//this.userName = userName;
+		this.user_password = user_password;
 		this.accountId = accountId;
-		this.accountBalance = accountBalance;
+		this.balance = balance;
 	}
 
 	public String getFirstName() {
@@ -39,20 +39,20 @@ public class Customer extends Person {
 		this.last_name = last_name;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
+	//public String getUserName() {
+	//	return userName;
+	//}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+	//public void setUserName(String userName) {
+	//	this.userName = userName;
+	//}
 
-	public String getPassword() {
-		return password;
+	public String getUserPassword() {
+		return user_password;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.user_password = user_password;
 	}
 
 	public int getAccountId() {
@@ -63,12 +63,12 @@ public class Customer extends Person {
 		this.accountId = accountId;
 	}
 	
-	public double getAccountBalance() {
-		return accountBalance;
+	public double Balance() {
+		return balance;
 	}
 	
-	public void setAccountBalance(double accountBalance) {
-		this.accountBalance = accountBalance;
+	public void setBalance(double Balance) {
+		this.balance = balance;
 	}
 	
 // This is the method that is called when "R" is chosen on the console
@@ -100,9 +100,25 @@ public class Customer extends Person {
 		Driver.startingScreen();
 		
 		
+	}
+	
+	public static void customerLogin() {
+		Scanner cl = new Scanner(System.in);
+		System.out.println("Please enter your information to login: ");
+		System.out.println("");
 		
+		System.out.println("First Name: ");
+		String first_name = cl.nextLine();
+		System.out.println(" ");
 		
+		System.out.println("Last Name: ");
+		String last_name = cl.nextLine();
 		
+		System.out.println("Password: ");
+		String user_password = cl.nextLine();
+		
+		//Need to figure out how to check SQL database to verify
+		//if the input is correct***************************************
 		
 	}
 

@@ -147,6 +147,28 @@ public class Employee extends Person {
 	//	}
 		
 //	}
+	
+	
+	
+	
+	
+	public static void employeeLogin() {
+		Scanner el = new Scanner(System.in);
+		
+		System.out.println("Please enter information to login");
+		System.out.println("");
+		
+		System.out.println("Username: ");
+		String empLogin = el.nextLine();
+		System.out.println("");
+		
+		System.out.println("Password: ");
+		String empPassword = el.nextLine();
+		System.out.println("");
+		
+		//Need to figure out how to check SQL to verify input
+		
+	}
 
 //might not need to put this in an abstract class
 //just put the login methods for 
