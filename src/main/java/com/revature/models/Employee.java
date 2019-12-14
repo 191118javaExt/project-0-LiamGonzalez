@@ -10,6 +10,7 @@ public class Employee extends Person {
 	private String userName = first_name + last_name;
 	private int accountId;
 	private int password;
+	static String employee_code = "2019";
 	
 	
 	public Employee(String first_name, String last_name, String userName, int accountId, int password) {
@@ -91,6 +92,14 @@ public class Employee extends Person {
 	public void setPassword(int password) {
 		this.password = password;
 	}
+	
+	public String getEmployeeCode() {
+		return employee_code;
+	}
+	
+	public void setEmployeeCode (int employee_pin) {
+		this.employee_code = employee_code;
+	}
 
 	
 	
@@ -104,24 +113,20 @@ public class Employee extends Person {
 		//System.out.println("if you are not an employee, please exit the terminal.");
 		System.out.println("---------------------------------------------------------");
 		
-	//	System.out.println("Please verify that you are an employee.");
-	//	System.out.println("Press 1 for YES");
-	//	System.out.println("Press 2 for NO");
-	//	System.out.println("Press any other key to return to main menu");
+	
 		
-		String employeeVerify = empscan.nextLine();
+		//String employeeVerify = empscan.nextLine();
 		
 	
-		//if user is not employee
-	//	if(employeeVerify == "2") {
-	//		System.out.println("You are not eligible to register as an employee");
-	//		Driver.startingScreen();
-			
-			//if user is employee
-	//	}else if(employeeVerify == "1") {
-		//	System.out.println("You have verified that you are an employee.");
+
 			System.out.println("Please fill out the required information:");
-			System.out.println(".......");
+			System.out.println(".............................");
+			
+			System.out.println("Employee PIN: ");
+			String code = empscan.nextLine();
+			
+			if (code.equals(employee_code)) {
+			
 			
 			System.out.println("First Name: ");
 			String first_name = empscan.nextLine();
@@ -137,16 +142,21 @@ public class Employee extends Person {
 			System.out.println("Your employee username is: " + first_name + last_name);
 			System.out.println("Your password is: " + password);
 			System.out.println("---------------------------------");
-			System.out.println("Press any key to return to main menu");}/////////////////////////////
+			System.out.println("Press any key to return to main menu");////////////////////
+			
+			String nextStep = empscan.nextLine();
+			if(nextStep != null) {
+				Driver.startingScreen();
+			}
+		}else {
+			System.out.println("Employee code incorrect, returning to main menu...");
+			Driver.startingScreen();
+		}
+			
+	}	
 	
 		
-	//	}else {
-			
-		//	Driver.startingScreen();
-		
-	//	}
-		
-//	}
+	
 	
 	
 	
@@ -156,6 +166,10 @@ public class Employee extends Person {
 		Scanner el = new Scanner(System.in);
 		
 		System.out.println("Please enter information to login");
+		System.out.println("");
+		
+		System.out.println("Employee PIN: ");
+		String pin = el.nextLine();
 		System.out.println("");
 		
 		System.out.println("Username: ");

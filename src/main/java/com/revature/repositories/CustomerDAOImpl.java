@@ -29,10 +29,10 @@ public class CustomerDAOImpl implements EmployeeDAO {
 	private static Logger logger = Logger.getLogger(EmployeeDAOImpl.class);
 	
 	@Override
-	public List<Employee> findAll() {
+	public List<Customer> findAll() {
 		
 		List<Customer> list = new ArrayList<>();
-		List<Customer> supervisors = new ArrayList<>();
+		//List<Customer> supervisors = new ArrayList<>();
 		
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			
@@ -56,11 +56,11 @@ public class CustomerDAOImpl implements EmployeeDAO {
 				String user_password = rs.getString("");///////
 				//boolean is_e = rs.getDouble("salary");/////////
 				
-				Employee e = new Employee(id, first_name, last_name, null);//////////
-				int sup_id = rs.getInt("supervisor");
+				Customer c = new Customer(id, first_name, last_name, null);//////////
+				//int sup_id = rs.getInt("supervisor");
 				
-				list.add(e);
-				supervisors.add(sup_id);
+			//	list.add(e);
+				//supervisors.add(sup_id);
 			}
 			
 			rs.close();

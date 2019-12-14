@@ -6,6 +6,7 @@ import com.revature.Driver;
 
 
 public class Customer extends Person {
+	//private int id;
 	private String first_name;
 	private String last_name;
 	//private String userName = first_name + last_name;
@@ -39,13 +40,6 @@ public class Customer extends Person {
 		this.last_name = last_name;
 	}
 
-	//public String getUserName() {
-	//	return userName;
-	//}
-
-	//public void setUserName(String userName) {
-	//	this.userName = userName;
-	//}
 
 	public String getUserPassword() {
 		return user_password;
@@ -88,19 +82,99 @@ public class Customer extends Person {
 		String last_name = customerscan.nextLine();
 		
 		System.out.println("Password:");
-		String password = customerscan.nextLine();
+		String password1 = customerscan.nextLine();
+		System.out.println("");
+		
+		System.out.println("Re-enter Password:");
+		String password2 = customerscan.nextLine();
+		
+		if(password1.equals(password2)) {
 		
 		System.out.println("-----------------------------");
+		System.out.println("This is the information you submitted: ");
 		System.out.println("Name: " + first_name + " " + last_name);
-		System.out.println("Password: " + password);
+		System.out.println("Password: " + password1);
+		System.out.println("");
+		System.out.println("Is the above information correct?");
+		System.out.println("Press 'Y' for YES. Press any other key for NO:");
+		String decide = customerscan.nextLine().toUpperCase();
+		
+		if(decide.equals("Y") == false) {
+			System.out.println("Is this the problem?");
+			//registerForCustomerAccount();
+		}else {
 		
 		System.out.println("Thank you for applying for an account.");
+		System.out.println("This is your account information: ");
+		System.out.println("");
+		System.out.println("Name: " + first_name + " " + last_name);
+		System.out.println("Password: " + password1);
 		System.out.println("Your application will be reviewed by an employee soon. ");
 		System.out.println("-----------------------------");
+		
+		System.out.println("Press any key to continue.");
+		String nextStep = customerscan.nextLine(); 
+		
+		
+		if(nextStep != null) {
+		
 		Driver.startingScreen();
+		}
+		
+		}
 		
 		
-	}
+		
+		}else {
+			do {
+			System.out.println("passwords don't match.");
+			System.out.println("");
+			System.out.println("Re-enter Password:");
+			password2 = customerscan.nextLine();
+			
+			}while(password1.equals(password2) == false);
+				if(password1.equals(password2)) {
+					System.out.println("-----------------------------");
+					System.out.println("This is the information you submitted: ");
+					System.out.println("Name: " + first_name + " " + last_name);
+					System.out.println("Password: " + password1);
+					System.out.println("");
+					System.out.println("Is the above information correct?");
+					System.out.println("Press 'Y' for YES. Press any other key for NO");
+					String decide = customerscan.nextLine().toUpperCase();
+					
+					if(decide == "Y") {
+						//registerForCustomerAccount();
+						System.out.println("Thank you for applying for an account.");
+						System.out.println("This is your account information: ");
+						System.out.println("");
+						System.out.println("Name: " + first_name + " " + last_name);
+						System.out.println("Password: " + password1);
+						System.out.println("Your application will be reviewed by an employee soon. ");
+						System.out.println("-----------------------------");
+						
+						System.out.println("Press any key to continue.");
+						String nextStep = customerscan.nextLine(); 
+						
+						
+						if(nextStep != null) {
+						
+						Driver.startingScreen();
+						}
+						
+						}
+					}else {
+						registerForCustomerAccount();
+					
+					}
+					
+					
+				}
+			
+		}
+		
+		
+	
 	
 	public static void customerLogin() {
 		Scanner cl = new Scanner(System.in);
@@ -116,6 +190,7 @@ public class Customer extends Person {
 		
 		System.out.println("Password: ");
 		String user_password = cl.nextLine();
+		
 		
 		//Need to figure out how to check SQL database to verify
 		//if the input is correct***************************************
