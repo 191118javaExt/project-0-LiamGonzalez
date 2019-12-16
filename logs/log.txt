@@ -1,0 +1,74 @@
+2019-12-16 14:18:25 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: ERROR: relation "users" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:225)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:36)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 14:18:33 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: ERROR: relation "users" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:225)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:36)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 14:20:15 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: ERROR: relation "users" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:225)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:36)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 14:23:14 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: ERROR: relation "project0.users" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:225)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:36)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 14:24:14 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name emp_id was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:43)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 14:26:28 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name supervisor was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 14:27:49 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name supervisor was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
+	at com.revature.Driver.main(Driver.java:71)

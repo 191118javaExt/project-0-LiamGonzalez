@@ -7,19 +7,24 @@ import com.revature.Driver;
 public class Employee extends Person {
 	private String first_name;
 	private String last_name;
-	private String userName = first_name + last_name;
+	
 	private int accountId;
-	private int password;
+	private String password;
 	static String employee_code = "2019";
+	private int emp_id;
+	
+	public Employee() {
+		
+	}
 	
 	
-	public Employee(String first_name, String last_name, String userName, int accountId, int password) {
+	public Employee(String first_name, String last_name, String userName, int accountId, String password, int id) {
 		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
-		this.userName = userName;
 		this.accountId = accountId;
 		this.password = password;
+		this.emp_id = emp_id;
 	}
 
 	
@@ -51,23 +56,7 @@ public class Employee extends Person {
 		this.last_name = last_name;
 	}
 
-
-
-
-	public String getUserName() {
-		return userName;
-	}
-
-
-
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-
-
-
+	
 	public int getAccountId() {
 		return accountId;
 	}
@@ -80,16 +69,12 @@ public class Employee extends Person {
 	}
 
 
-
-
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
 
-
-
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	
@@ -99,6 +84,14 @@ public class Employee extends Person {
 	
 	public void setEmployeeCode (int employee_pin) {
 		this.employee_code = employee_code;
+	}
+	
+	public int getEmployeeId() {
+		return emp_id;
+	}
+	
+	public void setEmployeeId(int emp_id) {
+		this.emp_id = emp_id;
 	}
 
 	
@@ -172,9 +165,9 @@ public class Employee extends Person {
 		String pin = el.nextLine();
 		System.out.println("");
 		
-		System.out.println("Username: ");
-		String empLogin = el.nextLine();
-		System.out.println("");
+		//System.out.println("Username: ");
+		//String empLogin = el.nextLine();
+		//System.out.println("");
 		
 		System.out.println("Password: ");
 		String empPassword = el.nextLine();
