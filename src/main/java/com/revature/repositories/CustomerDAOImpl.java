@@ -24,21 +24,27 @@ import com.revature.models.Customer;
 import com.revature.models.Employee;
 import com.revature.util.ConnectionUtil;
 
-public class CustomerDAOImpl implements EmployeeDAO {
+public class CustomerDAOImpl implements CustomerDAO {
 	
 	private static Logger logger = Logger.getLogger(EmployeeDAOImpl.class);
 	
+	
+	 
+	 
+	
 	//Do we want to make a list of accounts?
-	@Override
-	public List<Customer> findAll() {
-		
-		List<Customer> list = new ArrayList<>();
-		//List<Customer> supervisors = new ArrayList<>();
-		
+	//@Override
+	 public Customer getCustomerByName(String first_name, String last_name, String user_password) {
+		  
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			
 			// This String represents the SQL which we will execute on our database
-			String sql = "SELECT * FROM user;";
+			String sql = "SELECT * FROM project0.users WHERE first_name = ? AND last_name = ? AND user_password = ?;";
+			
+			Statement stmt = conn.stmt(sql);
+	  		stmt.setString(1, first_name);
+	  		stmt.setString(2, last_name);
+	 		stmt.setString(3, user_password);
 			
 			// This Statement object is a wrapper around our SQL string
 			// And is obtained through our connection to the database
@@ -52,41 +58,29 @@ public class CustomerDAOImpl implements EmployeeDAO {
 			// our syntax. Since we can use a while loop instead of a do-while loop
 			while(rs.next()) {
 				int id = rs.getInt("user_id");
-				String first_name = rs.getString("first_name");
-				String last_name = rs.getString("last_name");
-				String user_password = rs.getString("user_password");
+				String firstName = rs.getString("first_name");
+				String lastName = rs.getString("last_name");
+				String userPassword = rs.getString("user_password");
 				double checking_balance = rs.getDouble("checking_balance");
 				double savings_balance = rs.getDouble("Savings_balance");
+				boolean account_approval = rs.getBoolean("account_approval");
 				
 				
-				Customer c = new Customer(first_name, last_name, user_password, checking_balance, savings_balance);{
+				Customer c = new Customer(first_name, last_name, user_password, checking_balance, savings_balance, account_approval);{
 					c.setFirstName(first_name);
 					c.setLastName(last_name);
 					c.setUserPassword(user_password);
 					c.setCheckingBalance(checking_balance);
 					c.setSavingsBalance(savings_balance);
+					c.setAccountApproved(account_approval);
 					
 				}
 				
 			}
-			
-			rs.close();
-		} catch(SQLException e) {
-			logger.warn("Unable to retrieve all users", e);
-		}
 		
-		for(int i = 0; i < list.size(); i++) {
-			int sup_id = supervisors.get(i);
-			
-			// Find Employee that matches supervisor id
-			for(Employee e: list) {
-				if(e.getId() == sup_id) {
-					list.get(i).setSupervisor(e);
-				}
-			}
-		}
 		
-		return list;
+		} 
+		
 	}
 
 	@Override
@@ -95,54 +89,66 @@ public class CustomerDAOImpl implements EmployeeDAO {
 		return null;
 	}
 
-	@Override
-	public boolean insert(Employee e) {
+	@Override       ///////////////
+	public boolean insert(Customer c) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			
 			// This String represents the SQL which we will execute on our database
 			// We use ?'s as place holders, which we can insert values from Java using
 			// PreparedStatements
-			String sql = "INSERT INTO employee (first_name, last_name, email, salary, supervisor) " +
-					"VALUES (?, ?, ?, ?, ?);";
+			String sql = "INSERT INTO Customer (first_name, last_name, user_password, checking_balance, savings_balance, account_approved) " +
+					"VALUES (?, ?, ?, ?, ?, ?);";
 			
 			// This PreparedStatement object is a wrapper around our SQL string
 			// And is obtained through our connection to the database
 			// And allows us to insert into the place holders
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, e.getFirst_name());
-			stmt.setString(2, e.getLast_name());
-			stmt.setString(3, e.getEmail());
-			stmt.setDouble(4, e.getSalary());
-			Employee sup = e.getSupervisor();
+			stmt.setString(1, c.getFirstName());
+			stmt.setString(2, c.getLastName());
+			stmt.setString(3, c.getUserPassword());
+			stmt.setDouble(4, c.getCheckingBalance());
+			stmt.setDouble(5, c.getSavingsBalance());
+			stmt.setBoolean(6, c.getAccountApproved());
 			
-			if(sup != null) {
-				stmt.setInt(5, sup.getId());
-
-			} else {
-				stmt.setNull(5, java.sql.Types.INTEGER);
-			}
 			
-			if(!stmt.execute()) {
-				return false;
-			}
-		} catch(SQLException ex) {
-			logger.warn("Unable to retrieve all users", ex);
-			return false;
 		}
-		
-		return true;
 	}
 
+
+
 	@Override
-	public boolean update(Employee e) {
+	public void open_account() { //new customer creation method
 		// TODO Auto-generated method stub
-		return false;
+		
 	}
 
 	@Override
-	public List<Employee> Approved() {
+	public Customer findCustomerByName(String first_name, String last_name, String user_password) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean customerUpdate(Customer customer) {
+		
+try(Connection conn = ConnectionUtil.getConnection()) {
+			
+			String sql = "UPDATE project0.customers SET first_name = ?, last_name = ?, user_password = ?, approved = ?;";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, customer.getFirstName());
+			stmt.setString(2, customer.getLastName());
+			stmt.setString(3, customer.getUserPassword());
+			stmt.setBoolean(5, customer.getAccountApproved());
+			
+			boolean success = stmt.execute();
+			return success;
+		} catch (SQLException e) {
+			logger.warn("Unable to update customer information", e);
+			e.printStackTrace();
+		}
+		return false;
+	
+	
 	}
 
 }

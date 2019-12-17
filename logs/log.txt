@@ -90,3 +90,27 @@ org.postgresql.util.PSQLException: The column name supervisor was not found in t
 	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
 	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
 	at com.revature.Driver.main(Driver.java:72)
+2019-12-16 19:39:18 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name supervisor was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
+	at com.revature.Driver.main(Driver.java:72)
+2019-12-16 20:38:11 WARN  EmployeeDAOImpl:63 - Unable to retrieve all users 'employees' 
+org.postgresql.util.PSQLException: The column name emp_type was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:47)
+	at com.revature.Driver.main(Driver.java:18)
+2019-12-16 20:38:43 WARN  EmployeeDAOImpl:63 - Unable to retrieve all users 'employees' 
+org.postgresql.util.PSQLException: The column name emp_type was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:47)
+	at com.revature.Driver.main(Driver.java:18)
+2019-12-16 20:58:50 WARN  EmployeeDAOImpl:63 - Unable to retrieve all users 'employees' 
+org.postgresql.util.PSQLException: The column name emp_type was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:47)
+	at com.revature.Driver.main(Driver.java:18)

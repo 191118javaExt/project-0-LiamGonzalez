@@ -44,12 +44,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				String first_name = rs.getString("first_name");///////////
 				String last_name = rs.getString("last_name");////////////
 				String user_password = rs.getString("user_password");//////////
+				String emp_type = rs.getString("emp_type");
 				boolean approved;/////////////
 
 				Employee e = new Employee();
 				e.setFirstName(first_name);
 				e.setLastName(last_name);
 				e.setPassword(user_password);
+				e.setEmployeeType(emp_type);
 				int sup_id = rs.getInt("supervisor");
 
 				list.add(e);
@@ -57,8 +59,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			}
 
 			rs.close();
-		} catch (SQLException e) {
-			logger.warn("Unable to retrieve all users", e);
+		} catch (SQLException e) {                       //////
+			logger.warn("Unable to retrieve all users 'employees' ", e);////////////
 		}
 
 		for (int i = 0; i < list.size(); i++) {

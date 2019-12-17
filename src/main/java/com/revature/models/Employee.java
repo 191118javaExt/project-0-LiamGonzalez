@@ -3,27 +3,30 @@ package com.revature.models;
 import java.util.Scanner;
 
 import com.revature.Driver;
+import com.revature.services.Services;
 
 public class Employee extends Person {
 	private String first_name;
 	private String last_name;
 	private int accountId;
 	private String password;
-	static String employee_code = "2019";
+	public String employee_code = "2019";
 	private int emp_id;
+	private String emp_type;
 	
 	public Employee() {
 		
 	}
 	
 	
-	public Employee(String first_name, String last_name, String userName, int accountId, String password, int id) {
+	public Employee(String first_name, String last_name, String userName, int accountId, String password, int id, String emp_type) {
 		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.accountId = accountId;
 		this.password = password;
 		this.emp_id = emp_id;//not sure that i will need this
+		this.emp_type = emp_type;
 	}
 
 	
@@ -61,8 +64,6 @@ public class Employee extends Person {
 	}
 
 
-
-
 	public void setAccountId(int accountId) {
 		this.accountId = accountId;
 	}
@@ -92,58 +93,18 @@ public class Employee extends Person {
 	public void setEmployeeId(int emp_id) {
 		this.emp_id = emp_id;
 	}
-
 	
-	
-//this method is called when an employee registers for an employee account
-	public static void employeeRegistration() {
-		Scanner empscan = new Scanner(System.in);
-		
-		System.out.println("Welcome to the Employee Registration page.");
-		System.out.println("Only Bank Employees may register as an employee,");
-		System.out.println("Press any key to continue");
-		//System.out.println("if you are not an employee, please exit the terminal.");
-		System.out.println("---------------------------------------------------------");
-		
-	
-		
-	
-
-			System.out.println("Please fill out the required information:");
-			System.out.println(".............................");
-			
-			System.out.println("Employee PIN: ");
-			String code = empscan.nextLine();
-			
-			if (code.equals(employee_code)) {
-			
-			
-			System.out.println("First Name: ");
-			String first_name = empscan.nextLine();
-			
-			System.out.println("Last Name: ");
-			String last_name = empscan.nextLine();
-			
-			System.out.println("Password: ");
-			String password = empscan.nextLine();
-			
-			System.out.println(" ");
-			
-			System.out.println("Your employee username is: " + first_name + last_name);
-			System.out.println("Your password is: " + password);
-			System.out.println("---------------------------------");
-			System.out.println("Press any key to return to main menu");////////////////////
-			
-			String nextStep = empscan.nextLine();
-			if(nextStep != null) {
-				Driver.startingScreen();
-			}
-		}else {
-			System.out.println("Employee code incorrect, returning to main menu...");
-			Driver.startingScreen();
-		}
-			
+	public String getEmployeeType() {
+		return emp_type;
 	}
+	
+	public void setEmployeeType(String emp_type ) {
+		this.emp_type = emp_type;
+	}
+
+	
+	
+
 
 
 	@Override
