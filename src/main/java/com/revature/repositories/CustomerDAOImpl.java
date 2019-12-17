@@ -11,6 +11,7 @@
 package com.revature.repositories;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,15 +34,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 	 
 	
 	//Do we want to make a list of accounts?
-	//@Override
-	 public Customer getCustomerByName(String first_name, String last_name, String user_password) {
+	public Customer getCustomerByName(String first_name, String last_name, String user_password) {
 		  
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			
 			// This String represents the SQL which we will execute on our database
 			String sql = "SELECT * FROM project0.users WHERE first_name = ? AND last_name = ? AND user_password = ?;";
 			
-			Statement stmt = conn.stmt(sql);
+			PreparedStatement stmt = conn.prepareStatement(sql);
 	  		stmt.setString(1, first_name);
 	  		stmt.setString(2, last_name);
 	 		stmt.setString(3, user_password);
@@ -83,14 +83,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 	}
 
-	@Override
-	public Employee findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override       ///////////////
-	public boolean insert(Customer c) {
+	public boolean open_account(Customer c) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			
 			// This String represents the SQL which we will execute on our database
@@ -110,17 +106,21 @@ public class CustomerDAOImpl implements CustomerDAO {
 			stmt.setDouble(5, c.getSavingsBalance());
 			stmt.setBoolean(6, c.getAccountApproved());
 			
+			return stmt.execute();
+			
 			
 		}
-	}
-
-
-
-	@Override
-	public void open_account() { //new customer creation method
-		// TODO Auto-generated method stub
+		catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
 		
+		return false;
 	}
+
+
+
+	
 
 	@Override
 	public Customer findCustomerByName(String first_name, String last_name, String user_password) {
@@ -143,12 +143,18 @@ try(Connection conn = ConnectionUtil.getConnection()) {
 			boolean success = stmt.execute();
 			return success;
 		} catch (SQLException e) {
-			logger.warn("Unable to update customer information", e);
+			logger.warn("Cannot update customer info", e);
 			e.printStackTrace();
 		}
 		return false;
 	
 	
+	}
+
+	@Override
+	public boolean doesCustomerExist(Customer customer) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

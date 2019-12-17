@@ -9,10 +9,10 @@ import com.revature.models.Employee;
 public interface CustomerDAO {
 	
 	
-	public void open_account();  //'new customer'
+	public boolean open_account(Customer c);  //'new customer'
 	public Customer findCustomerByName(String first_name, String last_name, String user_password);
-	public boolean customerUpdate(Customer customer);
-	public boolean doesCustomerExist(Customer customer);
+	public boolean customerUpdate(Customer c);
+	public boolean doesCustomerExist(Customer c);
 	//public boolean approval_status();
 	
 	//deposit
