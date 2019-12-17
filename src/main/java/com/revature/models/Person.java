@@ -1,18 +1,11 @@
 package com.revature.models;
 
 public abstract class Person {
-	private String name;
-	private String userName;
+	private String first_name;
+	private String last_name;
 	private String password;
 	private int accountId;
 	//private int age;
-	
-	//public static accountRegistration() {
-	//	System.out.println("");
-	//}
-	
-	
-	
 	
 	public abstract void registerForAccount();
 	//****IDK YET IF I WANT TO CUSTOMIZE LOGIN FOR EACH TYPE OF USER****

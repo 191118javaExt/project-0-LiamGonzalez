@@ -41,6 +41,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 			// This String represents the SQL which we will execute on our database
 			String sql = "SELECT * FROM project0.users WHERE first_name = ? AND last_name = ? AND user_password = ?;";
 			
+			//where is this needed?
+			//Statement stmt = conn.createStatement();
+					
+					
 			PreparedStatement stmt = conn.prepareStatement(sql);
 	  		stmt.setString(1, first_name);
 	  		stmt.setString(2, last_name);
