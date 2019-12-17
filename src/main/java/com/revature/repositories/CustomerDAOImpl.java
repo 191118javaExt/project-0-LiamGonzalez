@@ -28,6 +28,7 @@ public class CustomerDAOImpl implements EmployeeDAO {
 	
 	private static Logger logger = Logger.getLogger(EmployeeDAOImpl.class);
 	
+	//Do we want to make a list of accounts?
 	@Override
 	public List<Customer> findAll() {
 		
@@ -51,16 +52,22 @@ public class CustomerDAOImpl implements EmployeeDAO {
 			// our syntax. Since we can use a while loop instead of a do-while loop
 			while(rs.next()) {
 				int id = rs.getInt("user_id");
-				String first_name = rs.getString("first_name");///////////
-				String last_name = rs.getString("last_name");//////////
-				String user_password = rs.getString("");///////
-				//boolean is_e = rs.getDouble("salary");/////////
+				String first_name = rs.getString("first_name");
+				String last_name = rs.getString("last_name");
+				String user_password = rs.getString("user_password");
+				double checking_balance = rs.getDouble("checking_balance");
+				double savings_balance = rs.getDouble("Savings_balance");
 				
-				Customer c = new Customer(id, first_name, last_name, null);//////////
-				//int sup_id = rs.getInt("supervisor");
 				
-			//	list.add(e);
-				//supervisors.add(sup_id);
+				Customer c = new Customer(first_name, last_name, user_password, checking_balance, savings_balance);{
+					c.setFirstName(first_name);
+					c.setLastName(last_name);
+					c.setUserPassword(user_password);
+					c.setCheckingBalance(checking_balance);
+					c.setSavingsBalance(savings_balance);
+					
+				}
+				
 			}
 			
 			rs.close();
@@ -130,6 +137,12 @@ public class CustomerDAOImpl implements EmployeeDAO {
 	public boolean update(Employee e) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public List<Employee> Approved() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

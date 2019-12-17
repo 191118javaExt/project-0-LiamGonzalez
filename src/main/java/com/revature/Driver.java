@@ -2,6 +2,7 @@ package com.revature;
 import java.util.Scanner;
 import com.revature.models.*;
 import com.revature.repositories.EmployeeDAOImpl;
+import com.revature.services.Services;
 import com.revature.util.ConnectionUtil;
  
 
@@ -28,11 +29,11 @@ public class Driver {
 				switch(sc.nextLine().toUpperCase()) {
 				
 				case "1":
-					Customer.customerLogin();
+					Services.customerLogin();
 					break;
 					
 				case "2":
-					Customer.registerForCustomerAccount();
+					Services.registerForCustomerAccount();
 					break;
 					
 				case "3":	
@@ -40,7 +41,7 @@ public class Driver {
 					break;
 					
 				case "4":
-					Employee.employeeLogin();
+					Services.employeeLogin();
 					break;
 					
 				case "5":

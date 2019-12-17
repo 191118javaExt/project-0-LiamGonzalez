@@ -7,7 +7,6 @@ import com.revature.Driver;
 public class Employee extends Person {
 	private String first_name;
 	private String last_name;
-	
 	private int accountId;
 	private String password;
 	static String employee_code = "2019";
@@ -24,13 +23,13 @@ public class Employee extends Person {
 		this.last_name = last_name;
 		this.accountId = accountId;
 		this.password = password;
-		this.emp_id = emp_id;
+		this.emp_id = emp_id;//not sure that i will need this
 	}
 
 	
 	
 	
-	public Employee(int id, String first_name, String last_name, String email, double salary, Object object) {
+	public Employee(int emp_id, String first_name, String last_name, Object object) { //check to make sure this is complete
 		// TODO Auto-generated constructor stub
 	}
 
@@ -108,8 +107,6 @@ public class Employee extends Person {
 		
 	
 		
-		//String employeeVerify = empscan.nextLine();
-		
 	
 
 			System.out.println("Please fill out the required information:");
@@ -146,6 +143,13 @@ public class Employee extends Person {
 			Driver.startingScreen();
 		}
 			
+	}
+
+
+	@Override
+	public void registerForAccount() {
+		// TODO Auto-generated method stub
+		
 	}	
 	
 		
@@ -153,8 +157,11 @@ public class Employee extends Person {
 	
 	
 	
-	
-	
+	/*
+	//need to change this up. For employee registration and login, we want to start off
+	//by asking for an employee PIN. The PIN number is going to be the same across ALL 
+	//employees ("2019"). If the user input is "2019", then we will continue with the 
+	//login/registration process
 	public static void employeeLogin() {
 		Scanner el = new Scanner(System.in);
 		
@@ -165,9 +172,13 @@ public class Employee extends Person {
 		String pin = el.nextLine();
 		System.out.println("");
 		
-		//System.out.println("Username: ");
-		//String empLogin = el.nextLine();
-		//System.out.println("");
+		System.out.println("First Name: ");
+		String firstName = el.nextLine();
+		System.out.println("");
+
+		System.out.println("Last Name: ");
+		String lastName = el.nextLine();
+		System.out.println("");
 		
 		System.out.println("Password: ");
 		String empPassword = el.nextLine();
@@ -189,5 +200,5 @@ public class Employee extends Person {
 	//as well as view customer information
 	
 	
-
+*/
 }

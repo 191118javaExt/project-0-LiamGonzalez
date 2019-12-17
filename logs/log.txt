@@ -72,3 +72,21 @@ org.postgresql.util.PSQLException: The column name supervisor was not found in t
 	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
 	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
 	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 14:59:43 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name supervisor was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 15:07:25 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name supervisor was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
+	at com.revature.Driver.main(Driver.java:71)
+2019-12-16 18:48:47 WARN  EmployeeDAOImpl:61 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name supervisor was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:53)
+	at com.revature.Driver.main(Driver.java:72)
