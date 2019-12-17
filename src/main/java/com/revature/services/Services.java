@@ -86,35 +86,7 @@ public class Services {
 	
 	
 	
-	//need to change this up. For employee registration and login, we want to start off
-		//by asking for an employee PIN. The PIN number is going to be the same across ALL 
-		//employees ("2019"). If the user input is "2019", then we will continue with the 
-		//login/registration process
-		public static void employeeLogin() {
-			Scanner el = new Scanner(System.in);
-			
-			System.out.println("Please enter information to login");
-			System.out.println("");
-			
-			System.out.println("Employee PIN: ");
-			String pin = el.nextLine();
-			System.out.println("");
-			
-			System.out.println("First Name: ");
-			String firstName = el.nextLine();
-			System.out.println("");
-
-			System.out.println("Last Name: ");
-			String lastName = el.nextLine();
-			System.out.println("");
-			
-			System.out.println("Password: ");
-			String empPassword = el.nextLine();
-			System.out.println("");
-			
-			//Need to figure out how to check SQL to verify input
-			
-		}	
+	
 		
 		
 		
@@ -236,29 +208,7 @@ public class Services {
 			
 			
 			
-			//this is the customer login method. 	
-				
-			public static void customerLogin() {
-				Scanner cl = new Scanner(System.in);
-				System.out.println("Please enter your information to login: ");
-				System.out.println("");
-				
-				System.out.println("First Name: ");
-				String first_name = cl.nextLine();
-				System.out.println(" ");
-				
-				System.out.println("Last Name: ");
-				String last_name = cl.nextLine();
-				System.out.println("");
-				
-				System.out.println("Password: ");
-				String user_password = cl.nextLine();
-				
-				
-				//Need to figure out how to check SQL database to verify
-				//if the input is correct***************************************
-				
-			}
+			
 			
 			
 			
@@ -307,7 +257,7 @@ public class Services {
 						switch(sc.nextLine().toUpperCase()) {
 						
 						case "1":
-							Services.customerLogin();
+							CustomerService.customerLogin();
 							break;
 							
 						case "2":
@@ -319,7 +269,7 @@ public class Services {
 							break;
 							
 						case "4":
-							Services.employeeLogin();
+							EmployeeService.employeeLogin();
 							break;
 							
 						case "5":

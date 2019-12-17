@@ -3,7 +3,6 @@ package com.revature.repositories;
 import java.sql.Connection;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -11,6 +10,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import java.sql.ResultSet;
+
+import com.revature.models.Administrator;
 import com.revature.models.Employee;
 import com.revature.util.ConnectionUtil;
 
@@ -135,7 +137,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 			//statement?
 			
-			String sql = "SELECT * FROM project0.employeesadmins WHERE username = ? AND userpassword = ?;";
+			String sql = "SELECT * FROM project0.employeesadmins WHERE first_name = ? AND last_name = ? AND user_password = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, first_name);
 			stmt.setString(2, last_name);
@@ -147,14 +149,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				String lastName = rs.getString("last_name");
 				String userPassword = rs.getString("user_password");
 				//administrator variable?
-				boolean admin = rs.getBoolean("isadmin");
+				boolean administrator = rs.getBoolean("is_admin");
 
-				if (admin) {
+				if (administrator) {
 					rs.close();
-					return new Admin(firstName, lastName);
+					return new Administrator(first_name, lastName);
 				} else {
 					rs.close();
-					return new Employee(firstName, lastName, userPassword);
+					return new Employee(first_name, last_name, user_password);
 				}
 				 
 			}

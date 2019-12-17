@@ -4,20 +4,43 @@ public abstract class Person {
 	private String first_name;
 	private String last_name;
 	private String password;
+	
+	//do we need to include accountId?
 	private int accountId;
 	//private int age;
 	
-	public abstract void registerForAccount();
-	//****IDK YET IF I WANT TO CUSTOMIZE LOGIN FOR EACH TYPE OF USER****
-	//this method will be inherited and set up to 
-	//actually "apply" for a bank account
 	
+	public String getFirst_name() {
+		return first_name;
+	}
 	
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
 	
-	public void accessAccount() {
-		//this method will be inherited by Employees and Administrators
-		//for Employees, they will only be able to VIEW customer accounts
-		//Administrators will be allowed to VIEW and EDIT customer accounts
+	public String getLast_name() {
+		return last_name;
+	}
+	
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public int getAccountId() {
+		return accountId;
+	}
+	
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
+	}
 		
 	
 	}
@@ -28,4 +51,4 @@ public abstract class Person {
 	
 	
 
-}
+

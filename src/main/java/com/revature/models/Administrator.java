@@ -7,6 +7,7 @@ public class Administrator extends Person {
 	private String userName;
 	private String password;
 	private int accountId;
+	public boolean adminStatus;
 	
 	
 	public Administrator(String name, String userName, String password, int accountId) {
@@ -15,6 +16,7 @@ public class Administrator extends Person {
 		this.userName = userName;
 		this.password = password;
 		this.accountId = accountId;
+		this.adminStatus = adminStatus;
 	}
 
 
@@ -57,6 +59,17 @@ public class Administrator extends Person {
 		this.accountId = accountId;
 	}
 	
+	public boolean getAdminStatus() {
+		return adminStatus;
+	}
+	
+	public void setAdminStatus(boolean adminStatus) {
+		this.adminStatus = adminStatus;
+	}
+	
+	
+	
+	
 	public static void administratorRegistration() {
 		Scanner adminscan = new Scanner(System.in);
 		
@@ -68,11 +81,11 @@ public class Administrator extends Person {
 	}
 
 
-	@Override
-	public void registerForAccount() {
+//	@Override
+	//public void registerForAccount() {
 		// TODO Auto-generated method stub
 		
-	}
+//	}
 	
 	//need methods to approve/deny customer applications,
 	//view customer information, and edit customer info/transactions

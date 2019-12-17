@@ -14,6 +14,8 @@ public class Employee extends Person {
 	private int emp_id;
 	private String emp_type;
 	
+	
+	//do i need this constructor too?
 	public Employee() {
 		
 	}
@@ -107,11 +109,11 @@ public class Employee extends Person {
 
 
 
-	@Override
-	public void registerForAccount() {
+	//@Override
+	//public void registerForAccount() {
 		// TODO Auto-generated method stub
 		
-	}	
+	//}	
 	
 		
 	

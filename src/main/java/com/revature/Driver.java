@@ -15,7 +15,7 @@ public class Driver {
 		
 		//add a logger to show "application initiated".
 		EmployeeDAOImpl x = new EmployeeDAOImpl();/////////
-		x.findAll();///////
+		//x.findAll();///////
 		Services.startingScreen();
 		
 
