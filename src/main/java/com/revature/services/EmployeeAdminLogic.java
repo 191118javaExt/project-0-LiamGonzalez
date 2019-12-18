@@ -91,12 +91,15 @@ public class EmployeeAdminLogic {
 	
 	public void employeeCustomerInfo(Customer customer) {
 		System.out.println("Name: " + customer.getLastName() + ", " + customer.getFirstName());
+		
 		System.out.println("Username: " + customer.getUserName());
+		
 		System.out.println("Approved: " + customer.Approved());
 		System.out.println("");
+		
 		System.out.println("Accounts:");
 		System.out.println("");
-		//customer = cDAO.getCustomerByUserNameOnly(customer.getUserName());
+		customer = cDAO.getCustomerByUserNameOnly(customer.getUserName());
 		for(int i = 1; i <= customer.getUserAccounts().size(); i++)
 			System.out.println(i +"- " + customer.getUserAccounts().get(i).getAccountNumber() + ".........$" + customer.getUserAccounts().get(i).getAccountBalance());
 	}

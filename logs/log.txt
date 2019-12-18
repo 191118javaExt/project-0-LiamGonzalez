@@ -813,3 +813,57 @@ org.postgresql.util.PSQLException: The column index is out of range: 1, number o
 	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
 	at com.revature.services.Bank.startHere(Bank.java:90)
 	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 12:42:48 WARN  AccountsDAOImpl:76 - Can't get user's accounts
+org.postgresql.util.PSQLException: The column name username was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.AccountsDAOImpl.getAccountFromUser(AccountsDAOImpl.java:64)
+	at com.revature.services.CustomerLogic.grabWholeCustomer(CustomerLogic.java:26)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:95)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:48)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:15)
+2019-12-18 12:44:08 WARN  AccountsDAOImpl:76 - Can't get user's accounts
+org.postgresql.util.PSQLException: The column name username was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.AccountsDAOImpl.getAccountFromUser(AccountsDAOImpl.java:64)
+	at com.revature.services.CustomerLogic.grabWholeCustomer(CustomerLogic.java:26)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:95)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:48)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:15)
+2019-12-18 12:45:06 WARN  TransactionsDAOImpl:69 - Couldn't get recent transactions
+org.postgresql.util.PSQLException: ERROR: function recenttransactions(integer) does not exist
+  Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.TransactionsDAOImpl.getTransactions(TransactionsDAOImpl.java:52)
+	at com.revature.services.CustomerLogic.grabWholeCustomer(CustomerLogic.java:29)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:95)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:48)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:15)
+2019-12-18 12:45:06 WARN  TransactionsDAOImpl:69 - Couldn't get recent transactions
+org.postgresql.util.PSQLException: ERROR: function recenttransactions(integer) does not exist
+  Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.TransactionsDAOImpl.getTransactions(TransactionsDAOImpl.java:52)
+	at com.revature.services.CustomerLogic.grabWholeCustomer(CustomerLogic.java:29)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:95)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:48)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:15)

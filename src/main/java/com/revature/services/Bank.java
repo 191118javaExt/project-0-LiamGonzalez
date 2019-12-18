@@ -236,7 +236,7 @@ public class Bank {
 		do {
 		userFriendlyDate();
 		
-		System.out.println("Welcome back, " + customer.getFirstName() + ".");
+		System.out.println("Welcome back");
 		
 		System.out.println("Accounts:");
 		Account actSelect = existingCustomerAccountsDisplay(customer);
@@ -266,13 +266,18 @@ public class Bank {
 	public static Account existingCustomerAccountsDisplay(Customer customer) {
 		int acctChoice;
 		try {
-		//do {
+		CustomersDAOImpl cDAO = new CustomersDAOImpl();
+		customer = cDAO.getCustomerByUserNameOnly(customer.getUserName());
 		System.out.println("");
 		System.out.println("Select account:");
+		
 		for(int actSelect = 1; actSelect <= customer.getUserAccounts().size(); actSelect++) {
+			
 			int accountName = customer.getUserAccounts().get(actSelect).getAccountNumber();
+			
 			double accountBalance = customer.getUserAccounts().get(actSelect).getAccountBalance();
-			System.out.println(actSelect + ".   Account Number" + accountName + "$ " + accountBalance);
+			
+			System.out.println(actSelect + ".  Account Number" + accountName + "$ " + accountBalance);
 			System.out.println("");
 		}
 		System.out.println("0. Go Back");

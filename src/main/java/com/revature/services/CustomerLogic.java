@@ -25,10 +25,10 @@ public class CustomerLogic {
 		AccountsDAO baDAO = new AccountsDAOImpl();
 		TreeMap<Integer, Account> userAccounts = baDAO.getAccountFromUser(userName);
 		customer.setUserAccounts(userAccounts);
-		for(int i = 1; i <= userAccounts.size(); i++) {
-			ArrayBlockingQueue<String> trans = tDAO.getTransactions(userAccounts.get(i).getAccountNumber());
-			userAccounts.get(i).setRecentTransactions(trans);
-		}
+//		for(int i = 1; i <= userAccounts.size(); i++) {
+//			ArrayBlockingQueue<String> trans = tDAO.getTransactions(userAccounts.get(i).getAccountNumber());
+//			userAccounts.get(i).setRecentTransactions(trans);
+//		}
 		return customer;
 	}
 	

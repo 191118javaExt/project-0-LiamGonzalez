@@ -10,6 +10,8 @@ public class Driver {
 		//allow the user to use the banking application
 		
 		Bank bank = new Bank();
+		
+		////////////////////
 		bank.startHere();
 		
 		//System.out.println("By using our bank, you are agreeing to donate 40% of your monthly earnings to help pay for my student loans. ");

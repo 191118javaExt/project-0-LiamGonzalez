@@ -21,7 +21,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM project0.bankaccounts WHERE accountnumber = ?;";
+			String sql = "SELECT * FROM bankaccounts WHERE accountnumber = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, accountNumber);
 
@@ -30,7 +30,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 			while(rs.next()) {
 				int accountNum = rs.getInt("accountNumber");
 				double accountBal = rs.getDouble("accountBalance");
-				String accountOwner = rs.getString("userName");
+				String accountOwner = rs.getString("userNam");
 				
 				
 				Account Account = new Account(accountNum, accountBal, accountOwner);
@@ -61,7 +61,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 			while(rs.next()) {
 				int accountNum = rs.getInt("accountnumber");
 				double accountBal = rs.getDouble("accountbalance");
-				String accountOwner = rs.getString("username");////////
+				String accountOwner = rs.getString("usernam");////////
 				
 				Account bankAccount = new Account(accountNum, accountBal, accountOwner);
 				accounts.put(i, bankAccount);
@@ -104,7 +104,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql ="INSERT into bankaccounts (usernam) " +
+			String sql ="INSERT into bankaccounts (userNam) " +
 						"VALUES (?);";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
@@ -127,14 +127,14 @@ public class AccountsDAOImpl implements AccountsDAO{
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
 			
-			String sql = "SELECT accountnumber FROM bankaccounts WHERE usernam = ? AND accountbalance = 0;";
+			String sql = "SELECT accountNumber FROM bankAccounts WHERE userNam = ? AND accountBalance = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			
 			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				int accountNum = rs.getInt("accountnumber");
+				int accountNum = rs.getInt("accountNumber");
 				
 				
 				Account bankAccount = new Account(accountNum, 0, userName);
@@ -157,7 +157,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 		
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "DELETE FROM bankaccounts WHERE accountnumber = ?;";
+			String sql = "DELETE FROM bankAccounts WHERE accountNumber = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, accountNumber);
 			return stmt.execute();
