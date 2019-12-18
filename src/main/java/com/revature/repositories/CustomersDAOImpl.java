@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.apache.log4j.Logger;
 
@@ -21,7 +22,7 @@ public class CustomersDAOImpl implements CustomersDAO{
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			
 			// prepared statement
-			String sql = "SELECT * FROM project0.customers WHERE userName = ? AND userPassword = ?;";
+			String sql = "SELECT * FROM customers WHERE username = ? AND userPassword = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			stmt.setString(2, password);
@@ -54,7 +55,7 @@ public class CustomersDAOImpl implements CustomersDAO{
 	
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			
-			String sql = "UPDATE project0.customers SET userName = ?, userPassword = ?, firstName = ?, lastName = ?, approved = ? WHERE userName = ?;";
+			String sql = "UPDATE customers SET userName = ?, userPassword = ?, firstName = ?, lastName = ?, approved = ? WHERE userName = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, customer.getUserName());
 			stmt.setString(2, customer.getPassword());
@@ -79,19 +80,20 @@ public class CustomersDAOImpl implements CustomersDAO{
 		c.setUserName(userName);
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM project0.customers WHERE userName = ?;";
+			String sql = "SELECT * FROM customers WHERE username = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 
+			
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				String dbUserName = rs.getString("userName");
+				String dbUserName = rs.getString("username");
 				boolean exists = false;
 				if (userName.equals(dbUserName)) {
 					exists = true;
 					return exists;
 				} else {
-					return exists;
+					return false;
 				}
 			}
 		} catch (SQLException e) {
@@ -110,16 +112,17 @@ public class CustomersDAOImpl implements CustomersDAO{
 			
 			
 
-			String sql = "INSERT into project0.customers (userName, userPassword, firstName, lastName, approved) " +
-						"VALUES (?,?,?,?,?);";
+			String sql = "INSERT into customers (userName, userPassword, firstName, lastName, approved) " +
+						"VALUES (?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, customer.getUserName());
 			stmt.setString(2, customer.getPassword());
 			stmt.setString(3, customer.getFirstName());
 			stmt.setString(4, customer.getLastName());
 			stmt.setBoolean(5, customer.Approved());
-			
-			return stmt.execute();
+			System.out.println(sql);
+			stmt.execute();
+			return true;
 
 		} catch (SQLException e) {
 			logger.warn("///", e);
@@ -136,7 +139,7 @@ public class CustomersDAOImpl implements CustomersDAO{
 	try(Connection conn = ConnectionUtil.getConnection()) {
 			
 			// prepared statement
-			String sql = "SELECT * FROM project0.customers WHERE userName = ?;";  //project0.customers
+			String sql = "SELECT * FROM customers WHERE userName = ?;";  //project0.customers
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			

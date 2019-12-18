@@ -39,14 +39,14 @@ public Customer existingUserLoginCustomer() {
 		
 		System.out.println("please enter your username:");
 		Scanner scan = new Scanner(System.in);
-		String loginName = scan.nextLine();
-		thisCustomer.setUserName(loginName);
+		String[] loginName = scan.nextLine().split("\\n");
+		thisCustomer.setUserName(loginName[0]);
 		
 		System.out.println("Enter password:");
 		String loginPass = scan.nextLine();							
 		thisCustomer.setPassword(loginPass);
-		
-		return existingCustomerCheck(thisCustomer,loginName,loginPass);
+		existingCustomerCheck(thisCustomer,loginName[0],loginPass);
+		return thisCustomer;
 		
 	}
 
@@ -114,10 +114,6 @@ public Customer existingUserLoginCustomer() {
 			return true;
 		} else return false;
 	}
-	//public boolean acceptableAddress(String typeAddress) {
-	//	if ((!typeAddress.equals("")) && (typeAddress.length() <= 150)) {
-		//	return true;
-	//	} else return false;
-	//}
+	
 	
 }

@@ -258,7 +258,7 @@ public class Bank {
 	
 	public static void userFriendlyDate() {
 		Date dateObj = new Date();
-		String dateFormat = "EEEE, MMM d, y      h:mm a ";
+		String dateFormat = "EEEE, MMM d, y  h:mm a ";
 		SimpleDateFormat simpleDF = new SimpleDateFormat(dateFormat);
 		System.out.println(simpleDF.format(dateObj));
 	}
@@ -272,7 +272,7 @@ public class Bank {
 		for(int actSelect = 1; actSelect <= customer.getUserAccounts().size(); actSelect++) {
 			int accountName = customer.getUserAccounts().get(actSelect).getAccountNumber();
 			double accountBalance = customer.getUserAccounts().get(actSelect).getAccountBalance();
-			System.out.println(actSelect + ".      Account No." + accountName + "$ " + accountBalance);
+			System.out.println(actSelect + ".   Account Number" + accountName + "$ " + accountBalance);
 			System.out.println("");
 		}
 		System.out.println("0. Go Back");

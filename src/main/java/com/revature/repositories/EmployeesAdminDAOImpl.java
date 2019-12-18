@@ -22,7 +22,7 @@ public class EmployeesAdminDAOImpl implements EmployeesAdminDAO{
 		e.setUserName(userName);
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM project0.employeesadmins WHERE username = ?;";
+			String sql = "SELECT * FROM employeesadmins WHERE username = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 
@@ -51,7 +51,7 @@ public class EmployeesAdminDAOImpl implements EmployeesAdminDAO{
 
 			// prepared statement
 			
-			String sql = "SELECT * FROM project0.employeesadmins WHERE username = ? AND userpassword = ?;";
+			String sql = "SELECT * FROM employeesadmins WHERE username = ? AND userpassword = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			stmt.setString(2, password);
@@ -88,7 +88,7 @@ public class EmployeesAdminDAOImpl implements EmployeesAdminDAO{
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
 			// prepared statement
-			String sql = "SELECT * FROM project0.employeesadmins WHERE username = ?;";
+			String sql = "SELECT * FROM employeesadmins WHERE username = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			

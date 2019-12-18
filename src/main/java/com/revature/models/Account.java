@@ -44,8 +44,8 @@ public class Account {
 		public int getAccountNumber() {
 			return accountNumber;
 		}
-		public void setAccountNumber(int account_number) {/////////////////////
-			this.accountNumber = account_number;
+		public void setAccountNumber(int accountNumber) {/////////////////////
+			this.accountNumber = accountNumber;
 		}
 		public double getAccountBalance() {
 			return accountBalance;

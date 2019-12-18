@@ -28,9 +28,9 @@ public class AccountsDAOImpl implements AccountsDAO{
 			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				int accountNum = rs.getInt("accountnumber");
-				double accountBal = rs.getDouble("accountbalance");
-				String accountOwner = rs.getString("username");
+				int accountNum = rs.getInt("accountNumber");
+				double accountBal = rs.getDouble("accountBalance");
+				String accountOwner = rs.getString("userName");
 				
 				
 				Account Account = new Account(accountNum, accountBal, accountOwner);
@@ -51,7 +51,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 		TreeMap<Integer, Account> accounts = new TreeMap<>();
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM project0.bankaccounts WHERE usernam = ?;";
+			String sql = "SELECT * FROM bankaccounts WHERE usernam = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 

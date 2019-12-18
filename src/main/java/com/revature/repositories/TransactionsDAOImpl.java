@@ -20,7 +20,7 @@ public class TransactionsDAOImpl implements TransactionsDAO{
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql ="INSERT into project0.transactions (timeoccur, accountnum, descript) " +
+			String sql ="INSERT into transactions (timeoccur, accountnum, descript) " +
 						"VALUES (?, ?, ?);";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, time);
@@ -44,7 +44,7 @@ public class TransactionsDAOImpl implements TransactionsDAO{
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM project0.recentTransactions(?);";
+			String sql = "SELECT * FROM recentTransactions(?);";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, actno);
 			

@@ -44,7 +44,7 @@ public class EmployeeAdminLogic {
 		String custUN;
 		 do {
 		Bank.userFriendlyDate();
-		System.out.println("Welcome back, " + employee.getFirstName() + ".");
+		System.out.println("Welcome " + employee.getFirstName() + ".");
 
 		System.out.println("\n");
 		System.out.println("Enter a customer to view their account:");
@@ -58,7 +58,7 @@ public class EmployeeAdminLogic {
 			Customer currentCust = cDAO.getCustomerByUserNameOnly(custUN);
 			currentCust = cLogic.grabWholeCustomer(currentCust.getUserName(), currentCust.getPassword());
 			employeeCustomerInfo(currentCust);
-			System.out.println("---------------------");
+			System.out.println("");
 			System.out.println("Please make a selection:");
 			
 

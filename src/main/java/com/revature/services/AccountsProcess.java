@@ -66,7 +66,7 @@ public class AccountsProcess {
 		
 		amtD = ((double)((int)(amtD * 100)))/100;
 		if((account.getAccountBalance() + amtD) > 1000000000.00) {
-			System.out.println("ERROR: Threshold is$1000000000.00");
+			System.out.println("ERROR: Threshold is $1000000000.00");
 			return 0;
 		} else if(amtD < 0) {
 			System.out.println("Invalid deposit, cannot deposit less than $1.00");
@@ -76,7 +76,7 @@ public class AccountsProcess {
 		baDAO.updateAccount(account.getAccountNumber(), account.getAccountBalance());
 		
 		System.out.println("You deposited $" + amtD + "\nNew Balance: $" + account.getAccountBalance() );
-		logger.info(time + ": Acct. No. " + account.getAccountNumber() + ", Desposit: +$" + amtD + " , UserName: " + account.getUserName());
+		logger.info(time + ": Account Number " + account.getAccountNumber() + ", Desposit: +$" + amtD + " , UserName: " + account.getUserName());
 		return amtD;
 		
 	}
@@ -95,7 +95,7 @@ public class AccountsProcess {
 		baDAO.updateAccount(account.getAccountNumber(), account.getAccountBalance());
 		
 		System.out.println("You have withdrawn $" + amtW + "\nNew Balance: $" + account.getAccountBalance());
-		logger.info(time + ": Acct. No. " + account.getAccountNumber() + ", Withdraw: +$" + amtW + " , UserName: " + account.getUserName());
+		logger.info(time + ": Account Number " + account.getAccountNumber() + ", Withdraw: +$" + amtW + " , UserName: " + account.getUserName());
 		return amtW;
 	}
 	
@@ -106,11 +106,11 @@ public class AccountsProcess {
 			System.out.println("Account maximum is $1000000000.00, transfer amount too high.");
 			return 0;
 		} else if (amtT < 0) {
-			System.out.println("You shouldn't try to steal... shame on you!");
+			System.out.println("Not an appropriate transfer amount.");
 			return 0;
 		}
 		if(account.getAccountNumber() == otherAccount.getAccountNumber()) {
-			logger.info(time + ": From Acct. No. " + account.getAccountNumber() + " To Acct. No. " + otherAccount.getAccountNumber() + " , Transfer: $" + amtT);
+			logger.info(time + ": From Account Number " + account.getAccountNumber() + " To Account Number " + otherAccount.getAccountNumber() + " , Transfer: $" + amtT);
 			return 0;
 		}
 		if((account.getAccountBalance() - amtT) < 1) {
