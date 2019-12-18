@@ -9,7 +9,7 @@ public class Account {
 	
 	
 	
-		private int account_number;
+		private int accountNumber;
 		private final int  MIN = 1;
 		private double accountBalance;
 		private String userName;
@@ -17,14 +17,14 @@ public class Account {
 		
 	// constructors
 		public Account(int number, double bal) {
-			this.account_number = number;
+			this.accountNumber = number;
 			this.accountBalance = bal;
 		}
 		
 		public Account() {}
 		
 		public Account(int number) {
-			this.account_number = number;
+			this.accountNumber = number;
 		}
 		
 		public Account(int num, double bal, String owner) {
@@ -42,10 +42,10 @@ public class Account {
 		
 		// getters and setters
 		public int getAccountNumber() {
-			return account_number;
+			return accountNumber;
 		}
 		public void setAccountNumber(int account_number) {/////////////////////
-			this.account_number = account_number;
+			this.accountNumber = account_number;
 		}
 		public double getAccountBalance() {
 			return accountBalance;
@@ -110,7 +110,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [accountNumber=" + account_number + ", MIN=" + MIN + ", accountBalance=" + accountBalance
+		return "Account [accountNumber=" + accountNumber + ", MIN=" + MIN + ", accountBalance=" + accountBalance
 				+ ", userName=" + userName + ", recentTransactions=" + recentTransactions + "]";
 	}
 
@@ -122,7 +122,7 @@ public class Account {
 		long temp;
 		temp = Double.doubleToLongBits(accountBalance);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + account_number;
+		result = prime * result + accountNumber;
 		result = prime * result + ((recentTransactions == null) ? 0 : recentTransactions.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
@@ -132,22 +132,30 @@ public class Account {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
+		
 		if (obj == null)
 			return false;
+		
 		if (getClass() != obj.getClass())
 			return false;
+		
 		Account other = (Account) obj;
 		if (MIN != other.MIN)
 			return false;
+		
 		if (Double.doubleToLongBits(accountBalance) != Double.doubleToLongBits(other.accountBalance))
 			return false;
-		if (account_number != other.account_number)
+		
+		if (accountNumber != other.accountNumber)
 			return false;
+		
 		if (recentTransactions == null) {
 			if (other.recentTransactions != null)
 				return false;
+			
 		} else if (!recentTransactions.equals(other.recentTransactions))
 			return false;
+		
 		if (userName == null) {
 			if (other.userName != null)
 				return false;

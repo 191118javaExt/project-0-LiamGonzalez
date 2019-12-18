@@ -153,3 +153,234 @@ org.postgresql.util.PSQLException: No value specified for parameter 5.
 	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
 	at com.revature.services.Bank.startHere(Bank.java:90)
 	at com.revature.Driver.main(Driver.java:13)
+2019-12-17 23:36:14 WARN  CustomersDAOImpl:123 - ///
+org.postgresql.util.PSQLException: No value specified for parameter 5.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:264)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:294)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:120)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-17 23:51:22 WARN  CustomersDAOImpl:123 - ///
+org.postgresql.util.PSQLException: No value specified for parameter 5.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:264)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:294)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:120)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-17 23:56:20 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: No value specified for parameter 5.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:264)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:294)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:122)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-17 23:57:14 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.
+	at org.postgresql.core.v3.SimpleParameterList.bind(SimpleParameterList.java:64)
+	at org.postgresql.core.v3.SimpleParameterList.setLiteralParameter(SimpleParameterList.java:123)
+	at org.postgresql.jdbc.PgPreparedStatement.bindLiteral(PgPreparedStatement.java:1001)
+	at org.postgresql.jdbc.PgPreparedStatement.setBoolean(PgPreparedStatement.java:267)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:120)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-17 23:58:05 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.
+	at org.postgresql.core.v3.SimpleParameterList.bind(SimpleParameterList.java:64)
+	at org.postgresql.core.v3.SimpleParameterList.setLiteralParameter(SimpleParameterList.java:123)
+	at org.postgresql.jdbc.PgPreparedStatement.bindLiteral(PgPreparedStatement.java:1001)
+	at org.postgresql.jdbc.PgPreparedStatement.setBoolean(PgPreparedStatement.java:267)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:120)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-17 23:59:43 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:122)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:01:49 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:122)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:03:59 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:122)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:07:11 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:122)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:10:09 WARN  CustomersDAOImpl:98 - Can't find out if user exists or not
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.CustomersDAOImpl.customerExists(CustomersDAOImpl.java:86)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:91)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:49)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:11:42 WARN  CustomersDAOImpl:98 - Can't find out if user exists or not
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.CustomersDAOImpl.customerExists(CustomersDAOImpl.java:86)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:91)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:49)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:13:39 WARN  CustomersDAOImpl:98 - Can't find out if user exists or not
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.CustomersDAOImpl.customerExists(CustomersDAOImpl.java:86)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:91)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:49)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:17:20 WARN  CustomersDAOImpl:98 - Can't find out if user exists or not
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.CustomersDAOImpl.customerExists(CustomersDAOImpl.java:86)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:91)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:49)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:20:08 WARN  CustomersDAOImpl:98 - Can't find out if user exists or not
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.CustomersDAOImpl.customerExists(CustomersDAOImpl.java:86)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:91)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:49)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:20:49 WARN  CustomersDAOImpl:98 - Can't find out if user exists or not
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.CustomersDAOImpl.customerExists(CustomersDAOImpl.java:86)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:91)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:49)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:22:25 WARN  CustomersDAOImpl:125 - ///
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:122)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)
+2019-12-18 00:23:43 WARN  CustomersDAOImpl:98 - Can't find out if user exists or not
+org.postgresql.util.PSQLException: ERROR: relation "project0.customers" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.CustomersDAOImpl.customerExists(CustomersDAOImpl.java:86)
+	at com.revature.services.CustomerLogic.existingCustomerCheck(CustomerLogic.java:91)
+	at com.revature.services.CustomerLogic.existingUserLoginCustomer(CustomerLogic.java:49)
+	at com.revature.services.Bank.startHere(Bank.java:54)
+	at com.revature.Driver.main(Driver.java:13)

@@ -21,17 +21,17 @@ public class CustomersDAOImpl implements CustomersDAO{
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			
 			// prepared statement
-			String sql = "SELECT * FROM project0.customers WHERE username = ? AND userpassword = ?;";
+			String sql = "SELECT * FROM project0.customers WHERE userName = ? AND userPassword = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			stmt.setString(2, password);
 			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				String dbUserName = rs.getString("username");
-				String userPassword = rs.getString("userpassword");
-				String firstName = rs.getString("firstname");
-				String lastName = rs.getString("lastname");
+				String dbUserName = rs.getString("userName");
+				String userPassword = rs.getString("userPassword");
+				String firstName = rs.getString("firstName");
+				String lastName = rs.getString("lastName");
 				boolean approved = rs.getBoolean("approved");
 				
 				Customer customer = new Customer(dbUserName, userPassword, firstName, lastName, approved);
@@ -54,7 +54,7 @@ public class CustomersDAOImpl implements CustomersDAO{
 	
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			
-			String sql = "UPDATE project0.customers SET username = ?, userpassword = ?, firstname = ?, lastname = ?, approved = ? WHERE username = ?;";
+			String sql = "UPDATE project0.customers SET userName = ?, userPassword = ?, firstName = ?, lastName = ?, approved = ? WHERE userName = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, customer.getUserName());
 			stmt.setString(2, customer.getPassword());
@@ -79,13 +79,13 @@ public class CustomersDAOImpl implements CustomersDAO{
 		c.setUserName(userName);
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM project0.customers WHERE username = ?;";
+			String sql = "SELECT * FROM project0.customers WHERE userName = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				String dbUserName = rs.getString("username");
+				String dbUserName = rs.getString("userName");
 				boolean exists = false;
 				if (userName.equals(dbUserName)) {
 					exists = true;
@@ -107,15 +107,17 @@ public class CustomersDAOImpl implements CustomersDAO{
 	public boolean createCustomer(Customer customer) {
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
+			
+			
 
-			String sql = "INSERT into project0.customers (username, userpassword, firstname, lastname, address, approved) " +
-						"VALUES (?,?,?,?,?,?);";
+			String sql = "INSERT into project0.customers (userName, userPassword, firstName, lastName, approved) " +
+						"VALUES (?,?,?,?,?);";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, customer.getUserName());
 			stmt.setString(2, customer.getPassword());
 			stmt.setString(3, customer.getFirstName());
 			stmt.setString(4, customer.getLastName());
-			stmt.setBoolean(6, customer.Approved());
+			stmt.setBoolean(5, customer.Approved());
 			
 			return stmt.execute();
 
@@ -134,18 +136,17 @@ public class CustomersDAOImpl implements CustomersDAO{
 	try(Connection conn = ConnectionUtil.getConnection()) {
 			
 			// prepared statement
-			String sql = "SELECT * FROM project0.customers WHERE username = ?;";
+			String sql = "SELECT * FROM project0.customers WHERE userName = ?;";  //project0.customers
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				String dbUserName = rs.getString("username");
-				String userPassword = rs.getString("userpassword");
-				String firstName = rs.getString("firstname");
-				String lastName = rs.getString("lastname");
-				
-				boolean approved = rs.getBoolean("approved");
+				String dbUserName = rs.getString("userName");////////////
+				String userPassword = rs.getString("userPassword");////////
+				String firstName = rs.getString("firstName");/////////
+				String lastName = rs.getString("lastName");///////////
+				boolean approved = rs.getBoolean("approved");////////////
 				
 				Customer customer = new Customer(dbUserName, userPassword, firstName, lastName, approved);
 				rs.close();

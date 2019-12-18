@@ -104,20 +104,20 @@ public Customer existingUserLoginCustomer() {
 	}
 	
 	public boolean acceptableFirstName(String typeFirstName) {
-		if ((!typeFirstName.equals("")) && (typeFirstName.length() <= 50)) {
+		if ((!typeFirstName.equals("")) && (typeFirstName.length() <= 40)) {
 			return true;
 		} else return false;
 	}
 
 	public boolean acceptableLastName(String typeLastName) {
-		if ((!typeLastName.equals("")) && (typeLastName.length() <= 50)) {
+		if ((!typeLastName.equals("")) && (typeLastName.length() <= 40)) {
 			return true;
 		} else return false;
 	}
-	public boolean acceptableAddress(String typeAddress) {
-		if ((!typeAddress.equals("")) && (typeAddress.length() <= 150)) {
-			return true;
-		} else return false;
-	}
+	//public boolean acceptableAddress(String typeAddress) {
+	//	if ((!typeAddress.equals("")) && (typeAddress.length() <= 150)) {
+		//	return true;
+	//	} else return false;
+	//}
 	
 }

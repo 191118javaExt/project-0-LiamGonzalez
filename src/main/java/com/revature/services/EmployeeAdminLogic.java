@@ -224,7 +224,7 @@ public class EmployeeAdminLogic {
 	}
 	
 	public boolean openAnAccountCheck(Customer customer, double amtD) {
-		if (amtD >= 200) {
+		if (amtD >= 1) {
 			bDAO.createAccount(customer.getUserName());	
 		Account newAccount = bDAO.getNewAccount(customer.getUserName());
 			bDAO.updateAccount(newAccount.getAccountNumber(), 0);
@@ -234,7 +234,7 @@ public class EmployeeAdminLogic {
 			return true;
 		} else {
 			System.out.println(
-					"You must have deposit atleast $200 to meet the minimum requirement to open an account");
+					"You must have deposit at least $1 to meet the minimum requirement to open an account");
 			return false;
 		}
 	}

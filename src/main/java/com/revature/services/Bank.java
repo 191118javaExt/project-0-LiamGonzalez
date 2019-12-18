@@ -108,7 +108,7 @@ public class Bank {
 		System.out.println("Please select an option:");
 		System.out.println("[1] member login");
 		System.out.println("[2] New User");
-		System.out.println("[E]. EXIT");
+		System.out.println("[Q]. QUIT");
 	
 	}
 	
@@ -315,7 +315,9 @@ public class Bank {
 		}
 		
 		return customerSelection;
+	
 	}
+	
 	
 	
 

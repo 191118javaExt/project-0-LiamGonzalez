@@ -61,7 +61,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 			while(rs.next()) {
 				int accountNum = rs.getInt("accountnumber");
 				double accountBal = rs.getDouble("accountbalance");
-				String accountOwner = rs.getString("usernam");
+				String accountOwner = rs.getString("username");////////
 				
 				Account bankAccount = new Account(accountNum, accountBal, accountOwner);
 				accounts.put(i, bankAccount);
