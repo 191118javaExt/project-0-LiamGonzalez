@@ -23,13 +23,13 @@ public class EmployeesAdminDAOImpl implements EmployeesAdminDAO{
 		e.setUserName(userName);
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM employeesadmins WHERE userName = ?;";
+			String sql = "SELECT * FROM employeesAdmins WHERE userName = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				String dbUserName = rs.getString("username");
+				String dbUserName = rs.getString("userName");
 				boolean exists = false;
 				if (userName.equals(dbUserName)) {
 					exists = true;
@@ -52,17 +52,17 @@ public class EmployeesAdminDAOImpl implements EmployeesAdminDAO{
 
 			// prepared statement
 			
-			String sql = "SELECT * FROM employeesadmins WHERE userName = ? AND userPassword = ?;";
+			String sql = "SELECT * FROM employeesAdmins WHERE userName = ? AND userPassword = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
-			stmt.setString(2, password);
+			stmt.setString(2, password);////////////////
 
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				String dbUserName = rs.getString("username");
-				String userPassword = rs.getString("userpassword");
-				String firstName = rs.getString("firstname");
-				String lastName = rs.getString("lastname");
+				String dbUserName = rs.getString("userName");
+				String userPassword = rs.getString("userPassword");
+				String firstName = rs.getString("firstName");
+				String lastName = rs.getString("lastName");
 				boolean admin = rs.getBoolean("isadmin");
 
 				if (admin) {
@@ -89,18 +89,18 @@ public class EmployeesAdminDAOImpl implements EmployeesAdminDAO{
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
 			// prepared statement
-			String sql = "SELECT * FROM employeesadmins WHERE username = ?;";
+			String sql = "SELECT * FROM employeesAdmins WHERE username = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			
 
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				String dbUserName = rs.getString("username");
-				String userPassword = rs.getString("userpassword");
-				String firstName = rs.getString("firstname");
-				String lastName = rs.getString("lastname");
-				boolean admin = rs.getBoolean("isadmin");
+				String dbUserName = rs.getString("userName");
+				String userPassword = rs.getString("userPassword");
+				String firstName = rs.getString("firstName");
+				String lastName = rs.getString("lastName");
+				boolean admin = rs.getBoolean("isAdmin");
 
 				if (admin) {
 					rs.close();
