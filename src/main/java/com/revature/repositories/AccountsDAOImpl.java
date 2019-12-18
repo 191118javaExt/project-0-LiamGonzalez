@@ -85,7 +85,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "UPDATE project0.bankaccounts SET accountbalance = ? WHERE accountnumber = ?;";
+			String sql = "UPDATE bankaccounts SET accountbalance = ? WHERE accountnumber = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setDouble(1, accountBalance);
 			stmt.setInt(2, accountNumber);
@@ -104,7 +104,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql ="INSERT into project0.bankaccounts (usernam) " +
+			String sql ="INSERT into bankaccounts (usernam) " +
 						"VALUES (?);";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
@@ -127,7 +127,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
 			
-			String sql = "SELECT accountnumber FROM project0.bankaccounts WHERE usernam = ? AND accountbalance = 0;";
+			String sql = "SELECT accountnumber FROM bankaccounts WHERE usernam = ? AND accountbalance = 0;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 			
@@ -157,7 +157,7 @@ public class AccountsDAOImpl implements AccountsDAO{
 		
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "DELETE FROM project0.bankaccounts WHERE accountnumber = ?;";
+			String sql = "DELETE FROM bankaccounts WHERE accountnumber = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, accountNumber);
 			return stmt.execute();
