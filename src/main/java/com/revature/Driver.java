@@ -1,24 +1,16 @@
 package com.revature;
-import java.util.Scanner;
-import com.revature.models.*;
-import com.revature.repositories.EmployeeDAOImpl;
-import com.revature.services.Services;
-import com.revature.util.ConnectionUtil;
- 
+
+import com.revature.services.Bank;
 
 public class Driver {
-	
 
 	public static void main(String[] args) {
 		
-		System.out.println("Thank you for using our bank.");
+		//This is the method that will initialize the starting console and 
+		//allow the user to use the banking application
 		
-		//add a logger to show "application initiated".
-		EmployeeDAOImpl x = new EmployeeDAOImpl();/////////
-		//x.findAll();///////
-		Services.startingScreen();
-		
-
+		Bank bank = new Bank();
+		bank.startHere();
 	}
 
 }

@@ -114,3 +114,42 @@ org.postgresql.util.PSQLException: The column name emp_type was not found in thi
 	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
 	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:47)
 	at com.revature.Driver.main(Driver.java:18)
+2019-12-17 20:45:52 WARN  EmployeesAdminDAOImpl:41 - Unable to verify if employee exists
+org.postgresql.util.PSQLException: ERROR: relation "project0.employeesadmins" does not exist
+  Position: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at com.revature.repositories.EmployeesAdminDAOImpl.employeeExists(EmployeesAdminDAOImpl.java:29)
+	at com.revature.services.EmployeeAdminLogic.existingEmployeeCheck(EmployeeAdminLogic.java:199)
+	at com.revature.services.EmployeeAdminLogic.existingUserLoginEmployee(EmployeeAdminLogic.java:38)
+	at com.revature.services.Bank.startHere(Bank.java:64)
+	at com.revature.Driver.main(Driver.java:10)
+2019-12-17 22:43:50 WARN  CustomersDAOImpl:123 - 
+org.postgresql.util.PSQLException: No value specified for parameter 5.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:264)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:294)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:120)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:83)
+	at com.revature.Driver.main(Driver.java:10)
+2019-12-17 23:26:35 WARN  CustomersDAOImpl:123 - ///
+org.postgresql.util.PSQLException: No value specified for parameter 5.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:264)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:294)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at com.revature.repositories.CustomersDAOImpl.createCustomer(CustomersDAOImpl.java:120)
+	at com.revature.services.CustomerLogic.setNewUserFields(CustomerLogic.java:81)
+	at com.revature.services.Bank.startHere(Bank.java:90)
+	at com.revature.Driver.main(Driver.java:13)

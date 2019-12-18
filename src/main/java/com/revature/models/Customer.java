@@ -1,105 +1,122 @@
 package com.revature.models;
 
-import java.util.Scanner;
+import java.util.HashMap;
 
-import com.revature.Driver;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
+import com.revature.models.Account;
 
-public class Customer extends Person {
-	private int id;
-	private String first_name;
-	private String last_name;
-	private String user_password;
-	private int accountId;
-	private double checking_balance;
-	private double savings_balance;
-	private boolean account_approved;
+public class Customer extends User{
+
 	
-	public Customer(String first_name, String last_name, String password, double checking_balance, double savings_balance, boolean account_approved) {
-		super();
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.user_password = user_password;
-		this.accountId = accountId;
-		this.checking_balance = checking_balance;
-		this.savings_balance = savings_balance;
-		this.account_approved = account_approved;
-	}
-
-	public String getFirstName() {
-		return first_name;
-	}
-
-	public void setFirstName(String first_name) {
-		this.first_name = first_name;
-	}
+	//customer fields
+	private boolean approved = false;
 	
-	public String getLastName() {
-		return last_name;
+	
+	//What collection will be used?
+	//-Map not collection
+	
+	private Map<Integer, Account> userAccounts = new TreeMap<>();
+	
+	// constructors
+	public Customer() {}
+	
+	public Customer(String username) {
+		this();
+		this.setUserName(username);
+	}
+	public Customer(String username, String pass) {
+		this();
+		this.setUserName(username);
+		this.setPassword(pass);
 	}
 	
-	public void setLastName(String last_name) {
-		this.last_name = last_name;
+	public Customer(String username, String last, String first) {
+		this();
+		this.setUserName(username);
+		this.setLastName(last);
+		this.setFirstName(first);
+	}
+	
+	public Customer(String userName, String userPassword, String firstName, String lastName, boolean approved) {
+		this();
+		this.setUserName(userName);
+		this.setPassword(userPassword);
+		this.setFirstName(firstName);
+		this.setLastName(lastName);
+		this.setApproved(approved);
+	}
+	
+	
+	
+	
+	// getters and setters
+	public boolean Approved() {
+		return approved;
 	}
 
-
-	public String getUserPassword() {
-		return user_password;
+	public void setApproved(boolean approved) {
+		this.approved = approved;
 	}
 
-	public void setUserPassword(String password) {
-		this.user_password = user_password;
+	
+
+	public Map<Integer, Account> getUserAccounts() {
+		return userAccounts;
 	}
 
-	public int getAccountId() {
-		return accountId;
-	}
-
-	public void setAccountId(int accountId) {
-		this.accountId = accountId;
-	}
-	
-	public double getCheckingBalance() {
-		return checking_balance;
-	}
-	
-	public void setCheckingBalance(double checking_balance) {
-		this.checking_balance = checking_balance;
-	}
-	
-	public double getSavingsBalance() {
-		return savings_balance;
-	}
-	
-	public void setSavingsBalance(double savings_balance) {
-		this.savings_balance = savings_balance;
-	}
-	
-	public boolean getAccountApproved() {
-		return account_approved;
-	}
-	
-	public void setAccountApproved(boolean account_approved) {
-		this.account_approved = account_approved;
+	public void setUserAccounts(Map<Integer, Account> userAccounts) {
+		this.userAccounts = userAccounts;
 	}
 
 	@Override
-	public void registerForAccount() {
-		// TODO Auto-generated method stub
+	public String toString() {
+		return "Customer [approved=" + approved +", userAccounts=" + userAccounts + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + (approved ? 1231 : 1237);/////
+		result = prime * result + ((userAccounts == null) ? 0 : userAccounts.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
 		
+		if (this == obj)
+			
+			return true;
+		
+		
+		if (!super.equals(obj))
+			return false;
+		
+		
+		if (getClass() != obj.getClass())
+			return false;
+		
+		
+		Customer other = (Customer) obj;
+
+		if (approved != other.approved)
+			return false;
+		if (userAccounts == null) {
+			if (other.userAccounts != null)
+				return false;
+			
+		} else if (!userAccounts.equals(other.userAccounts))
+			return false;
+		return true;
 	}
 	
 	
-	
 
 	
 	
-	
-	
-	
-	
-	
-	
-	
-
 }
