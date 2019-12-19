@@ -61,8 +61,8 @@ public class CustomersDAOImpl implements CustomersDAO{
 			stmt.setString(2, customer.getPassword());
 			stmt.setString(3, customer.getFirstName());
 			stmt.setString(4, customer.getLastName());
-			stmt.setBoolean(6, customer.Approved());
-			stmt.setString(7, customer.getUserName());
+			stmt.setBoolean(5, customer.Approved());
+			stmt.setString(6, customer.getUserName());
 			boolean success = stmt.execute();
 			return success;
 		} catch (SQLException e) {
@@ -80,14 +80,14 @@ public class CustomersDAOImpl implements CustomersDAO{
 		c.setUserName(userName);
 		try (Connection conn = ConnectionUtil.getConnection()) {
 
-			String sql = "SELECT * FROM customers WHERE username = ?;";
+			String sql = "SELECT * FROM customers WHERE userName = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, userName);
 
 			
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				String dbUserName = rs.getString("username");
+				String dbUserName = rs.getString("userName");
 				boolean exists = false;
 				if (userName.equals(dbUserName)) {
 					exists = true;

@@ -22,7 +22,10 @@ public class AccountsProcess {
 	
 	Date date = new Date();
 	long time = date.getTime();
+	
+	//logger
 	private static Logger logger = Logger.getLogger(AccountsProcess.class);
+	
 	AccountsDAO baDAO = new AccountsDAOImpl();
 	TransactionsDAO tDAO = new TransactionsDAOImpl();
 	TransactionsLogic tLogic = new TransactionsLogic();

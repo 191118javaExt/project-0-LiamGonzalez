@@ -11,7 +11,7 @@ drop table if exists transactions CASCADE;
 
 --maybe remove project0. from customers
 create TABLE customers (
-	userName VARCHAR (50) PRIMARY KEY UNIQUE,  --50 to 40
+	userName VARCHAR (50) PRIMARY KEY UNIQUE,  --50 to 40 
 	userPassword varchar (50) NOT NULL,
 	firstName varchar (50) NOT NULL,
 	lastName varchar (50) NOT NULL,
@@ -44,7 +44,7 @@ create table transactions (
 	descript VARCHAR (50) NOT NULL
 );
 
-ALTER SEQUENCE bankaccounts_accountnumber_seq RESTART WITH 1000000000 INCREMENT BY 10;
+ALTER SEQUENCE bankaccounts_accountnumber_seq RESTART WITH 1000000000 INCREMENT BY 10; --???
 
 
 -- function 
@@ -122,12 +122,15 @@ insert into bankAccounts (accountBalance, userNam)
 INSERT INTO bankAccounts (accountBalance, userNam)
 	VALUES(33449.94, 'Employee2');
 
+INSERT INTO bankAccounts (accountBalance, userNam)
+	VALUES(12345.67, 'practice');
+
 
 --may need to delete these two things...
 SELECT * FROM customers;
 SELECT * FROM bankAccounts;
 
-SELECT * FROM employeesAdmins;
+--SELECT * FROM employeesAdmins, bankAccounts WHERE userName = usernam;
 
 
 INSERT INTO employeesadmins (userName, userPassword, firstName, lastName, isadmin)
